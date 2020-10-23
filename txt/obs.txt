@@ -1,0 +1,73 @@
+ //Completer requisições da api
+  //Controlelr COmpleter e um 'controller" da api
+  Completer<GoogleMapController> _controller = Completer();
+//controller para definir que uma tarefa foi Completada, suado para caputar o rsultadp do que foi executado
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Mapas e Geolocalização"),
+      ),
+      body: Container(
+          //GoogleMap widget mapa
+          child: GoogleMap(
+        //tipo de mapa
+        mapType: MapType.normal,
+        //-23.562436, -46.655005
+        //posição inical da  camera do mapa
+        initialCameraPosition: CameraPosition(
+          //target: recebe latitude e longitudde, LatLng ( latitude e longitudde)
+          target: LatLng(-23.562436, -46.655005),
+          //define a aproximação do mapa
+          //qaundo menor o zoom m ais distante fica, menor o mapa
+          zoom: 16,
+        ),
+        //metodo cria o mapa
+            //onMapCreated recebe o tipo de parametro o  controller (GoogleMapController)
+      /*  onMapCreated: (GoogleMapController controller) {
+          //recebe complete que quanto o mapa esta completo,
+          //_controller para controlar itens dentro do mapa
+          //complete recebe controller do  (GoogleMapController controller)
+          _controller.complete(controller);
+        },*/
+
+        NOTAS:
+-----------------------GoogleMap--------------------------
+        a criação do mapa e feito atraves do Widget GoogleMap ,
+        definindo o seu tipo de mapa com   mapType: MapType.normal,
+        e sua posicação da camera no mapa  initialCameraPosition: CameraPosition(),
+        assim ja e posisvel visualiza um mapa no app
+
+
+  --target: recebe latitude e longitudde, com metodo: LatLng ( latitude e longitudde),
+         ex:   target: LatLng(-23.562436, -46.655005),
+       ---zoom: 16,
+           --define a aproximação do mapa
+            --quando menor o int do zoom, mais distante sera o zoom do mapa
+
+              onMapCreated: _onMapCreated,
+              metodo que "cria" o mapa
+      onMapCreated recebe os tipo de parametro o controller (GoogleMapController),
+            ---------------------Completer--------------------
+
+        serve para determinar ser determinada ação foi concluida ou não,
+        usando completer não necessario usar o um setstate
+        ex: setState
+        setState(() {
+          googleMapController=googleMapController;
+        });
+
+_onMapCreated FUNCTION indica quando o mapa foi criado
+  _onMapCreated(GoogleMapController googleMapController){}
+
+    Completer tbm faz requisições da api
+   "Controller  Completer e um 'controller" da api"
+
+-----CONTROLLER-------------
+  Completer<GoogleMapController> _controller = Completer();
+controller usado para definir que uma tarefa foi Completada, pois ele recebe o resultado capturado do que foi executado
+
+"_controller"  recebe os estado do 'complete", que o mapa foi criado
+ _controller.complete(googleMapController);
+ desta forma ele recebe o objeto, possibilitando que seja ,possivel altera o mapa,
+O controller NÃO ALTERA que altera o mapa, ele so possIbilitaque isso aconteça.
