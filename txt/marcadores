@@ -1,0 +1,15 @@
+-------Marcadores - markers
+markers:final Set<Marker> markers;
+os markers: recebe um Set de macardores,
+lista de marcadores,coleção do tipo set,
+
+duferença do set para o maps
+Um Map recebe(index,valor);
+maps e possivel definir indice especifico
+o set recebe apenas valores não tem inidces(index) que represtam esses valores,
+criar uma lista de set para colocar itens diferentes em uma listagem
+
+um lista de macadores onde não items iguais
+
+//sem definir index e repetir valores dentro dela
+Set<MarkerId> _marcadores = {};

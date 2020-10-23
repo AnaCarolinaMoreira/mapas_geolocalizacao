@@ -1,0 +1,12 @@
+Movimentando a camera
+
+
+Rotacionar ou alterar o angulo da camera
+    //future retorna o googlecontroller
+    GoogleMapController googleMapController = await _controller.future;
+    //CameraUpdate recebe semrpe CameraPosition
+    //animateCamera sempre recebe CameraUpadate
+    //newCameraPosition recebe como parametoCameraPosition
+      //define o angulo da camera, por padrao e zero
+          tilt: 0,
+          bearing: gira a camera, o angulo que camera gira e para direita,(mas o conteudio vai para esquerda)
