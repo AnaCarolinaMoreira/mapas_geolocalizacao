@@ -1,0 +1,99 @@
+ criando lista do tipo set dos marcadores
+        Set<Marker> marcadoresLocal = {};
+   Criando um marcador
+   ex:
+    Marker marcadorShopping = Marker(
+           markerId: MarkerId("marcador-shopping"),
+           //-23.563408, -46.652535
+           position: LatLng(-23.563408, -46.652535),
+           infoWindow: InfoWindow(title: "Shopping cidade São Paulo"),
+           //aletrar icon
+           //por padrao o kmarcaadro vem defaultMarke
+           icon:
+               BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueMagenta),
+           ///click no marker
+           onTap: () {
+             print("Shopping Clicado!!");
+           },
+           //adciona rotação para o mnarcador
+           rotation: 45);
+
+ Criando função para carregar os marcadores
+ ex:
+  _carregarMarcadores() {
+     Set<Marker> marcadoresLocal = {};
+
+     Marker marcadorShopping = Marker(...);
+     Marker marcadorCartorio = Marker(...);
+
+     //add o marcador ao mapa
+     marcadoresLocal.add(marcadorShopping);
+     marcadoresLocal.add(marcadorCartorio);
+     //atualiza o estado da pagina para carregar os marcadores
+     setState(() {
+       _marcadores = marcadoresLocal;
+     });
+   }     -----
+
+    //exibe marcadores no mapa definidos
+             markers: _marcadores,
+cria a lista que add o marcador ao mapa
+          Set<Marker> marcadoresLocal = {};
+
+ ----CHAMANDO MARKER DENTRO GOOGLE MAPS
+exibe marcadores no mapa definidos
+            markers: _marcadores,
+EX:
+  GoogleMap(
+           mapType: MapType.normal,
+           initialCameraPosition: CameraPosition(
+             target: LatLng(-23.563408, -46.652535),
+             zoom: 16,
+           ),
+           onMapCreated: _onMapCreated,
+           /---
+           markers: _marcadores,
+         ),
+
+----METODOS do MARKERS
+
+CRIAR ID (indeficaão)
+      markerId: MarkerId("marcador-cartorio"),
+  aqui a id foi definido como uma string
+
+POSIÇÃO do marcador:
+    add posição para o marcador
+          position: LatLng(-23.563408, -46.655874),
+
+Alterar  icon:
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueMagenta),
+    obs:    por padrao o Marker vem como defaultMarker
+
+ Click no marker
+             onTap: () {
+               print("Shopping Clicado!!");
+             },
+
+Adicionando  rotação para o marcador
+             rotation: 45,
+ exibir TITULOS aos marcadores
+           infoWindow: InfoWindow(title: "12 Catorio de Notas"),
+
+//OBSERVAÇÃO
+Set:
+Set tem por padrao uma interface que não permite que valores se repitam
+e esta relacionado com ideia de conjuntos(coleção),
+não armazena  posição do elementos, logo não recebe um index,
+
+List
+Ja lista E um coleção ordenada, e permite que valores se repitam, ao contrario do Set
+o List ja recebe um index
+
+Map: armazena pares de chave, e recupera valores dados atraves da chave associada
+
+MARKERS com FOR
+Os marcadores poderiam ser add atraves de um for,
+resgatando os dados passados atraves de uma api
+
+o processo para add os marcadores e o mesmo não importa  a qtdd
+

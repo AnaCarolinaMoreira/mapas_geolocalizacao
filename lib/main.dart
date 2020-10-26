@@ -6,6 +6,6 @@ import 'Home.dart';
 void main() {
   runApp(MaterialApp(
     title: "Mapas e geolocalização",
-    home: MapsTesteCamadas(),
+    home: Home(),
   ));
 }
