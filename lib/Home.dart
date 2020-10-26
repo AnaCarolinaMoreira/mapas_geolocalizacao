@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
     )));
   }
 
-  _carregarMarcadores() {
+ /* _carregarMarcadores() {
     Set<Marker> marcadoresLocal = {};
 
     Marker marcadorShopping = Marker(
@@ -65,12 +65,12 @@ class _HomeState extends State<Home> {
     setState(() {
       _marcadores = marcadoresLocal;
     });
-  }
+  }*/
 
   @override
   void initState() {
     super.initState();
-    _carregarMarcadores();
+    //  _carregarMarcadores();
   }
 
   @override
@@ -94,8 +94,7 @@ class _HomeState extends State<Home> {
             zoom: 16,
           ),
           onMapCreated: _onMapCreated,
-
-          markers: _marcadores,
+          //  markers: _marcadores,
         ),
       ),
     );
