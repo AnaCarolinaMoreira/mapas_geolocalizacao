@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/MeusProjetos/mapas_geolocalizacao/lib/localUser.dart';
+
+import 'localUser.dart';
 
 void main() {
   runApp(MaterialApp(
