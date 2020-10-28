@@ -14,3 +14,13 @@ localização no android e com ponto
 -19.97638, -44.0439043
 localização no ios e com ponto
 -19,97638, -44,0439043
+
+//Position
+ ja tem como parametros longitude, .latitude,
+  Position({
+      this.longitude,
+      this.latitude,})
+
+ //O metodo myLocationEnabled: true  do Widgets GoogleMaps
+ possibilita visualizar um marcador especifico para sua localização,
+ marcadro redondo
